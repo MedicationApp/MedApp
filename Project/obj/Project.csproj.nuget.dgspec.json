@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\project\\Project\\Project.csproj": {}
+    "D:\\projects\\MedApp\\Project\\Project.csproj": {}
   },
   "projects": {
-    "D:\\projects\\project\\Project\\Project.csproj": {
+    "D:\\projects\\MedApp\\Project\\Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\project\\Project\\Project.csproj",
+        "projectUniqueName": "D:\\projects\\MedApp\\Project\\Project.csproj",
         "projectName": "Project",
-        "projectPath": "D:\\projects\\project\\Project\\Project.csproj",
+        "projectPath": "D:\\projects\\MedApp\\Project\\Project.csproj",
         "packagesPath": "C:\\Users\\epora\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\project\\Project\\obj\\",
+        "outputPath": "D:\\projects\\MedApp\\Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

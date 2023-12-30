@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WDRZev/3OO2UxwF3zQugbhrytGlzbpK94H6RXPTfsLE3VSM4MlbYFAaZrdBmT+3Tsce9zVjMwilzOFBKPNBCRw==",
+  "dgSpecHash": "9FHjqDk/Iv1bhtcwOMVDHCge0tZfyBBz104egFiTEzYJg/h7ADpCVbEkhLUg0a7InbrxyHL7X6frqqVDGyXu/Q==",
   "success": true,
-  "projectFilePath": "D:\\projects\\project\\Project\\Project.csproj",
+  "projectFilePath": "D:\\projects\\MedApp\\Project\\Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\epora\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.9\\microsoft.aspnetcore.authorization.7.0.9.nupkg.sha512",
     "C:\\Users\\epora\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.9\\microsoft.aspnetcore.components.7.0.9.nupkg.sha512",
