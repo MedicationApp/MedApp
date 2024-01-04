@@ -1,9 +1,16 @@
 ﻿@page "/"
+@inject Models.UserState UserState
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+@if(UserState.isSet()){
+    <h1>Welcome @UserState.getPatient().patientInfo.Name!</h1>
+}
+else{
+    <h1>Welcome! Choose profile :)</h1>
+}
+
+
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
