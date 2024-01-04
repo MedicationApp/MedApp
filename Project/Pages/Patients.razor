@@ -1,0 +1,53 @@
+﻿@page "/patients"
+@using Project.Models;
+@using Newtonsoft.Json;
+@inject HttpClient Http
+@inject Models.UserState UserState;
+
+<PageTitle>Patients</PageTitle>
+
+<h1>Patients</h1>
+
+<p>Available patients</p>
+
+@if (patients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patient in patients)
+            {
+                <tr>
+                    <td>@patient.patientInfo.Id</td>
+                    <td>@patient.patientInfo.Name</td>
+                    <td>@patient.patientInfo.Surname</td>
+                    <td><button type="button" class="btn btn-primary" @onclick="(() => UserState.setUser(patient))">Choose</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Patient>? patients;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var json = await Http.GetStringAsync("sample-data/patients.json");
+        //Console.WriteLine(json);
+        patients = JsonConvert.DeserializeObject<List<Patient>>(json);
+    }
+
+
+}

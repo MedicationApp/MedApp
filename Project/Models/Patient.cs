@@ -4,16 +4,16 @@ namespace Project.Models
 {
     public class Patient
     {
-        public int Id { get; set; }
+        public PatientInfo patientInfo;
 
-        public string Name { get; set; }
+        public List<int> medList;
+        
+        // public Patient(){
+            
+        //     Console.WriteLine(medList[0]);
+        // }
 
-        public string Surname { get; set; }
+        
 
-        public int Age { get; set; }
-
-        public int Height { get; set; }
-
-        public int Weight { get; set; }
     }
 }

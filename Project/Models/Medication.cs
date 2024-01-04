@@ -4,7 +4,10 @@ namespace Project.Models
 {
     public class Medication
     {
-        public MedicationInfo medInfo;
+        public int Id;
+        //public MedicationInfo medInfo;
+
+        public string Name;
 
     }
 

@@ -1,0 +1,44 @@
+[
+    {
+        "patientInfo": {
+            "Id": 19034,
+            "Name": "Ewa",
+            "Surname": "Kruk",
+            "Age": 22,
+            "Height": 172,
+            "Weight": 60
+        },
+        "medList": [
+            4,
+            7
+        ]
+    },
+    {
+        "patientInfo": {
+            "Id": 19027,
+            "Name": "Patryk",
+            "Surname": "Bobr",
+            "Age": 45,
+            "Height": 179,
+            "Weight": 83
+        },
+        "medList": [
+            1,
+            7
+        ]
+    },
+    {
+        "patientInfo": {
+            "Id": 17390,
+            "Name": "Gochad",
+            "Surname": "Drag",
+            "Age": 21,
+            "Height": 165,
+            "Weight": 55
+        },
+        "medList": [
+            1,
+            7
+        ]
+    }
+]
