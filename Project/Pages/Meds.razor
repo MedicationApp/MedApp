@@ -1,0 +1,67 @@
+﻿@page "/meds"
+@using Project.Models;
+@inject Models.UserState UserState
+@inject NavigationManager NavigationManager;
+
+<h1>Meds</h1>
+
+<p>Your added meds</p>
+
+@if (!UserState.isSet())
+{
+    <p><em>Choose Patient :P</em></p>
+}
+else if (UserState.getPatient().medList.Count == 0)
+{
+    <p><em>No meds added</em></p>
+
+    <div class="row mb-4">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row mb-4">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var med in UserState.getPatient().medList)
+            {
+                <tr>
+                    <td>@med.Id</td>
+                    <td>@med.Name</td>
+                    <td>@med.medInfo.MedType</td>
+                    <td><button type="button" class="btn btn-primary" @onclick="(() => EditMed(med.Id))">Edit</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private void AddMed()
+    {
+
+        NavigationManager.NavigateTo("/med");
+    }
+
+
+    private void EditMed(int id)
+    {
+        NavigationManager.NavigateTo($"/med/{id}");
+    }
+}

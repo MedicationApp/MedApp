@@ -1,0 +1,116 @@
+﻿@page "/med"
+@page "/med/{Id:int}"
+@using Project.Models;
+@using Newtonsoft.Json;
+@inject Models.UserState UserState;
+@inject Models.MedService MedService;
+@inject NavigationManager NavigationManager;
+
+<PageTitle> New Med</PageTitle>
+
+<h3>EditMed</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <EditForm Model="@med" OnSubmit="HandleSubmit">
+            <div class="mb-3">
+                <label for="Name" class="form-label"> Name </label>
+                <InputText id="name" @bind-Value="med.Name" class="form-control"></InputText>
+            </div>
+            <div class="mb-3">
+                <label for="medInfo.MedType" class="form-label"> Type of med </label>
+                <InputSelect id="medType" @bind-Value="med.medInfo.MedType" class="form-select">
+                    <option value="">Select Type</option>
+                    <option value="pill">Pills</option>
+                    <option value="liquid">Liquid</option>
+                    <option value="injection">Injection</option>
+                    <option value="cream">Cream</option>
+                    <option value="other">Other</option>
+                </InputSelect>
+            </div>
+            <div class="mb-3">
+                <label for="medInfo.DosageType" class="form-label"> Dosage </label>
+                <InputSelect id="dosage" @bind-Value="med.medInfo.DosageType" class="form-control">
+                    <option value="">Select Dosage</option>
+                    <option value="mg">mg</option>
+                    <option value="ml">ml</option>
+                    <option value="g">g</option>
+                    <option value="oz">oz</option>
+                    <option value="other">Other</option>
+                </InputSelect>
+            </div <div class="mb-3">
+            <label for="medInfo.TimeOfDay" class="form-label"> Dosage Time </label>
+            <InputSelect id="dosageTime" @bind-Value="med.medInfo.TimeOfDay" class="form-control">
+                <option value="">Select Time</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+                <option value="other">Other</option>
+            </InputSelect>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" @onclick="(() => Cancel())">Cancel</button>
+    </EditForm>
+</div>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Medication? med;
+
+    protected override void OnParametersSet()
+    {
+        if (Id is not null)
+        {
+            Medication foundMed = UserState.getPatient().GetMedication(Id.Value);
+            med = new()
+            {
+                Id = foundMed.Id,
+                Name = foundMed.Name,
+                medInfo = new()
+                {
+                    MedType = foundMed.medInfo.MedType,
+                    DosageType = foundMed.medInfo.DosageType,
+                    TimeOfDay = foundMed.medInfo.TimeOfDay
+                }
+            };
+        }
+        else
+        {
+            med = new()
+                {
+                    Id = 0000,
+                    Name = string.Empty,
+                    medInfo = new()
+                    {
+                        MedType = string.Empty,
+                        DosageType = string.Empty,
+                        TimeOfDay = string.Empty
+                    }
+                };
+        }
+    }
+
+
+    private void HandleSubmit()
+    {
+        if(med.Id == 0)
+        {
+            med.Id = UserState.getPatient().medList.Max(m => m.Id) + 1;
+
+            UserState.getPatient().AddMedication(med);
+        }
+        else
+        {
+            UserState.getPatient().EditMedication(med);
+        }
+        NavigationManager.NavigateTo("/meds");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/meds");
+    }
+}

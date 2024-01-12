@@ -5,7 +5,7 @@
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "D:\\projects\\MedApp\\Project\\obj\\Debug\\net7.0\\build-gz\\hmADEPca.gz",
+      "Id": "D:\\projects\\MedApp\\Project\\obj\\Debug\\net7.0\\compressed\\li3oea4ss5.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
@@ -71,6 +71,18 @@
     {
       "Id": "D:\\projects\\MedApp\\Project\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\projects\\MedApp\\Project\\wwwroot\\sample-data\\meds.json",
+      "PackagePath": "staticwebassets\\sample-data\\meds.json"
+    },
+    {
+      "Id": "D:\\projects\\MedApp\\Project\\wwwroot\\sample-data\\patients.json",
+      "PackagePath": "staticwebassets\\sample-data\\patients.json"
+    },
+    {
+      "Id": "D:\\projects\\MedApp\\Project\\wwwroot\\sample-data\\try.json",
+      "PackagePath": "staticwebassets\\sample-data\\try.json"
     },
     {
       "Id": "D:\\projects\\MedApp\\Project\\wwwroot\\sample-data\\weather.json",

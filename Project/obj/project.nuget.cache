@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9FHjqDk/Iv1bhtcwOMVDHCge0tZfyBBz104egFiTEzYJg/h7ADpCVbEkhLUg0a7InbrxyHL7X6frqqVDGyXu/Q==",
+  "dgSpecHash": "KFol0A8ROsGR9oZEfcNqKPIHHEBvf2gShUnOhXZ6IVKs3wG5xOn87afz1D2eMHKxc1YkcbssmAVQgnkfC9CIRg==",
   "success": true,
   "projectFilePath": "D:\\projects\\MedApp\\Project\\Project.csproj",
   "expectedPackageFiles": [
@@ -28,9 +28,17 @@
     "C:\\Users\\epora\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\epora\\.nuget\\packages\\microsoft.jsinterop\\7.0.9\\microsoft.jsinterop.7.0.9.nupkg.sha512",
     "C:\\Users\\epora\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.9\\microsoft.jsinterop.webassembly.7.0.9.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.0\\microsoft.net.sdk.webassembly.pack.8.0.0.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\epora\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\epora\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\epora\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\epora\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.14\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.14.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\epora\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

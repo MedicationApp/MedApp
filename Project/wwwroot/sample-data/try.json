@@ -1,0 +1,54 @@
+[
+    {
+        "patientInfo": {
+            "Id": 19034,
+            "Name": "BLEEEEEE",
+            "Surname": "Kruk",
+            "Age": 22,
+            "Height": 172,
+            "Weight": 60
+        },
+        "medList": [
+            {
+                "Id": 2012,
+                "Name": "Witamina C",
+                "medInfo" : {
+                    "MedType" : "pill"
+                }
+            },
+            {
+                "Id": 2000,
+                "Name": "Żelazo",
+                "medInfo" : {
+                    "MedType" : "pill"
+                }
+            }
+        ]
+    },
+    {
+        "patientInfo": {
+            "Id": 19034,
+            "Name": "Ewa",
+            "Surname": "Kruk",
+            "Age": 22,
+            "Height": 172,
+            "Weight": 60
+        },
+        "medList": [
+            {
+                "Id": 2012,
+                "Name": "Wit D",
+                "medInfo" : {
+                    "MedType" : "pill"
+                }
+            },
+            {
+                "Id": 2000,
+                "Name": "Paracetamol",
+                "medInfo" : {
+                    "MedType" : "pill"
+                }
+            }
+        ]
+    }
+]
