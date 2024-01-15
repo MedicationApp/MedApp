@@ -16,5 +16,6 @@ namespace Project.Models
 
         public int Weight { get; set; }
         
+        
     }
 }

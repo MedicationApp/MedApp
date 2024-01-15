@@ -1,10 +1,12 @@
 ﻿@page "/patients"
 @using Project.Models;
+@using Project.Services;
 @using Newtonsoft.Json;
 @inject HttpClient Http
 @inject Models.UserState UserState;
 @inject Models.MedService MedService;
 @inject NavigationManager NavigationManager;
+@* @inject DbApi DbApi *@
 
 <PageTitle>Patients</PageTitle>
 
@@ -55,6 +57,7 @@ else
     {
         var json = await Http.GetStringAsync("sample-data/try.json");
         patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
+        // patients = DbApi.GetAllPatientsList();
         MedService.patientList = patients;
     }
 
