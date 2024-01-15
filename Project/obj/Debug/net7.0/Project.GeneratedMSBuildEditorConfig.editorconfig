@@ -13,47 +13,55 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Project
 build_property.RootNamespace = Project
-build_property.ProjectDir = D:\projects\MedApp\Project\
+build_property.ProjectDir = C:\Users\48698\Documents\MedApp\Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\projects\MedApp\Project
+build_property.MSBuildProjectDirectory = C:\Users\48698\Documents\MedApp\Project
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/projects/MedApp/Project/App.razor]
+[C:/Users/48698/Documents/MedApp/Project/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Pages/EditMed.razor]
+[C:/Users/48698/Documents/MedApp/Project/Pages/EditMed.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdE1lZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Pages/Index.razor]
+[C:/Users/48698/Documents/MedApp/Project/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/48698/Documents/MedApp/Project/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Pages/Meds.razor]
+[C:/Users/48698/Documents/MedApp/Project/Pages/Meds.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Pages/Patients.razor]
+[C:/Users/48698/Documents/MedApp/Project/Pages/Patients.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF0aWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Shared/SurveyPrompt.razor]
+[C:/Users/48698/Documents/MedApp/Project/Shared/CheckBoxList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENoZWNrQm94TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/48698/Documents/MedApp/Project/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/_Imports.razor]
+[C:/Users/48698/Documents/MedApp/Project/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/MedApp/Project/Shared/MainLayout.razor]
+[C:/Users/48698/Documents/MedApp/Project/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ajb5ewb1of
 
-[D:/projects/MedApp/Project/Shared/NavMenu.razor]
+[C:/Users/48698/Documents/MedApp/Project/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-yldjx4wk48

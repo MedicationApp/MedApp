@@ -1,0 +1,37 @@
+﻿@page "/home"
+
+@using Project.Models;
+@inject UserState userState
+
+<h3>Medication Checkbox List</h3>
+
+@foreach (var medication in medList)
+{
+    <input type="checkbox" @bind="medication.Selected" /> @medication.Name <br />
+}
+
+<button @onclick="ShowSelectedValues">Show Selected Values</button>
+<p>Output: @OutPutValue</p>
+
+@code {
+    public List<Medication> medList { get; set; } = new List<Medication>();
+    protected List<string> SelectedIds = new List<string>();
+    public string OutPutValue { get; set; }
+
+    protected override void OnInitialized()
+    {
+        UpdateMedList();
+    }
+
+    private void UpdateMedList()
+    {
+        var patient = userState.getPatient();
+        medList = patient.medList;
+    }
+
+    protected void ShowSelectedValues()
+    {
+        OutPutValue = string.Join(",", medList.Where(m => m.Selected).Select(m => m.Name).ToArray());
+        StateHasChanged();
+    }
+}

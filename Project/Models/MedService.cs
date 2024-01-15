@@ -10,8 +10,5 @@ namespace Project.Models
         {
             patientList = new List<Patient>();
         }
-
-        
-
     }
 }

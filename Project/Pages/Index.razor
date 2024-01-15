@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject Models.UserState UserState
+@inject NavigationManager NavigationManager
 
 <PageTitle>Home</PageTitle>
 
@@ -9,8 +10,13 @@
 else{
     <h1>Welcome! Choose profile :)</h1>
 }
+Welcome to your new app. 
+Navigate to <button @onclick="NavigateToPatients">Patients</button> to choos or change your profile!
+ 
 
-
-
-Welcome to your new app.
-
+@code {
+    private void NavigateToPatients()
+    {
+        NavigationManager.NavigateTo("/Patients");
+    }
+}

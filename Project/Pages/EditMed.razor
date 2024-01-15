@@ -19,33 +19,32 @@
             </div>
             <div class="mb-3">
                 <label for="medInfo.MedType" class="form-label"> Type of med </label>
-                <InputSelect id="medType" @bind-Value="med.medInfo.MedType" class="form-select">
+                <InputSelect id="medType" @bind-Value="med.medInfo.medType" class="form-select">
                     <option value="">Select Type</option>
-                    <option value="pill">Pills</option>
-                    <option value="liquid">Liquid</option>
-                    <option value="injection">Injection</option>
-                    <option value="cream">Cream</option>
-                    <option value="other">Other</option>
+                    @foreach (var medType in Enum.GetValues(typeof(MedType)).Cast<MedType>()) 
+                    { 
+                        <option value="@medType.ToString()">@medType.ToString()</option> 
+                    }
                 </InputSelect>
             </div>
             <div class="mb-3">
                 <label for="medInfo.DosageType" class="form-label"> Dosage </label>
-                <InputSelect id="dosage" @bind-Value="med.medInfo.DosageType" class="form-control">
+                <InputSelect id="dosage" @bind-Value="med.medInfo.dosageType" class="form-control">
                     <option value="">Select Dosage</option>
-                    <option value="mg">mg</option>
-                    <option value="ml">ml</option>
-                    <option value="g">g</option>
-                    <option value="oz">oz</option>
-                    <option value="other">Other</option>
+                    @foreach (var dosageType in Enum.GetValues(typeof(DosageType)).Cast<DosageType>()) 
+                    { 
+                        <option value="@dosageType.ToString()">@dosageType.ToString()</option> 
+                    }
                 </InputSelect>
+                
             </div <div class="mb-3">
             <label for="medInfo.TimeOfDay" class="form-label"> Dosage Time </label>
-            <InputSelect id="dosageTime" @bind-Value="med.medInfo.TimeOfDay" class="form-control">
+            <InputSelect id="dosageTime" @bind-Value="med.medInfo.timeOfDay" class="form-control">
                 <option value="">Select Time</option>
-                <option value="morning">Morning</option>
-                <option value="afternoon">Afternoon</option>
-                <option value="evening">Evening</option>
-                <option value="other">Other</option>
+                @foreach (var dosageTime in Enum.GetValues(typeof(TimeOfDay)).Cast<TimeOfDay>()) 
+                { 
+                    <option value="@dosageTime.ToString()">@dosageTime.ToString()</option> 
+                }
             </InputSelect>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -71,9 +70,9 @@
                 Name = foundMed.Name,
                 medInfo = new()
                 {
-                    MedType = foundMed.medInfo.MedType,
-                    DosageType = foundMed.medInfo.DosageType,
-                    TimeOfDay = foundMed.medInfo.TimeOfDay
+                    medType = foundMed.medInfo.medType,
+                    dosageType = foundMed.medInfo.dosageType,
+                    timeOfDay = foundMed.medInfo.timeOfDay
                 }
             };
         }
@@ -85,9 +84,9 @@
                     Name = string.Empty,
                     medInfo = new()
                     {
-                        MedType = string.Empty,
-                        DosageType = string.Empty,
-                        TimeOfDay = string.Empty
+                        medType = MedType.Other,
+                        dosageType = DosageType.Other,
+                        timeOfDay = TimeOfDay.Other
                     }
                 };
         }

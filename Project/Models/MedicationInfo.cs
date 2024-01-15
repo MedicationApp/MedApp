@@ -8,11 +8,11 @@ namespace Project.Models
     public class MedicationInfo
     {
         [Required]
-        public string MedType {get; set;}
+        public MedType medType {get; set;}
 
-        public string? DosageType {get; set;}
+        public DosageType? dosageType {get; set;}
 
-        public string? TimeOfDay {get; set;}
+        public TimeOfDay? timeOfDay {get; set;}
         
     }
 
