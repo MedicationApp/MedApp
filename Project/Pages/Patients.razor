@@ -6,7 +6,7 @@
 @inject Models.UserState UserState;
 @inject Models.MedService MedService;
 @inject NavigationManager NavigationManager;
-@* @inject DbApi DbApi *@
+@inject DbApi DbApi
 
 <PageTitle>Patients</PageTitle>
 
@@ -49,16 +49,15 @@ else
     private void setUser(Patient patient)
     {
         UserState.setUser(patient);
-        NavigationManager.NavigateTo("/home");
+        NavigationManager.NavigateTo("/");
     }
 
 
     protected override async Task OnInitializedAsync()
     {
         var json = await Http.GetStringAsync("sample-data/try.json");
-        patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
-        // patients = DbApi.GetAllPatientsList();
+        // patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
+        patients = DbApi.GetAllPatientsList();
         MedService.patientList = patients;
     }
-
 }

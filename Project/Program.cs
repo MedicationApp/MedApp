@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Project;
 using Project.Models;
+using Project.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -11,7 +12,7 @@ var folder = Environment.SpecialFolder.LocalApplicationData;
 var path = Environment.GetFolderPath(folder);
 var DbPath = System.IO.Path.Join(path, "MedAppDataBase.db");
 builder.Services.AddDbContext<Data>(options => options.UseSqlite(DbPath));
-builder.Services.AddTransient<Data>();
+builder.Services.AddTransient<DbApi>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 var userState = new UserState();
@@ -22,4 +23,5 @@ var medService = new MedService();
 medService.Initialize();
 builder.Services.AddSingleton(medService);
 
+Console.WriteLine(DbPath);
 await builder.Build().RunAsync();

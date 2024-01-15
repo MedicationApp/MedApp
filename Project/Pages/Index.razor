@@ -1,11 +1,23 @@
 ﻿@page "/"
 @inject Models.UserState UserState
 @inject NavigationManager NavigationManager
+@using Project.Models;
 
 <PageTitle>Home</PageTitle>
 
 @if(UserState.isSet()){
     <h1>Welcome @UserState.getPatient().patientInfo.Name!</h1>
+    <h3>Medication Checkbox List</h3>
+
+    @foreach (var medication in medList)
+    {
+        <input type="checkbox" @bind="medication.Selected" /> @medication.Name <br />
+    }
+
+    <button @onclick="ShowSelectedValues">Show Selected Values</button>
+    <p>Output: @OutPutValue</p>
+
+
 }
 else{
     <h1>Welcome! Choose profile :)</h1>
@@ -19,4 +31,31 @@ Navigate to <button @onclick="NavigateToPatients">Patients</button> to choos or 
     {
         NavigationManager.NavigateTo("/Patients");
     }
+        public List<Medication> medList { get; set; } = new List<Medication>();
+        protected List<string> SelectedIds = new List<string>();
+        public string OutPutValue { get; set; }
+
+        protected override void OnInitialized()
+        {
+            UpdateMedList();
+        }
+
+        private void UpdateMedList()
+        {
+            var patient = UserState.getPatient();
+            if (patient!= null)
+                medList = patient.medList;
+            else
+                medList = null;
+        }
+
+        protected void ShowSelectedValues()
+        {
+            if (medList != null)
+            {
+                OutPutValue = string.Join(",", medList.Where(m => m.Selected).Select(m => m.Name).ToArray());
+                StateHasChanged();
+            }
+        }
+    
 }
