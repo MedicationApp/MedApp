@@ -2,7 +2,7 @@
     {
         "patientInfo": {
             "Id": 19034,
-            "Name": "BLEEEEEE",
+            "Name": "Agnieszka",
             "Surname": "Kruk",
             "Age": 22,
             "Height": 172,
@@ -10,17 +10,31 @@
         },
         "medList": [
             {
-                "Id": 2012,
+                "Id": 1,
                 "Name": "Witamina C",
                 "medInfo" : {
-                    "MedType" : "pill"
+                    "MedType" : "Pill"
                 }
             },
             {
-                "Id": 2000,
+                "Id": 2,
                 "Name": "Żelazo",
                 "medInfo" : {
-                    "MedType" : "pill"
+                    "MedType" : "Pill"
+                }
+            },
+            {
+                "Id": 3,
+                "Name": "Witamina D",
+                "medInfo" : {
+                    "MedType" : "Pill"
+                }
+            },
+            {
+                "Id": 4,
+                "Name": "Amol",
+                "medInfo" : {
+                    "MedType" : "Liquid"
                 }
             }
         ]
@@ -29,24 +43,38 @@
         "patientInfo": {
             "Id": 19034,
             "Name": "Ewa",
-            "Surname": "Kruk",
+            "Surname": "Pawlak",
             "Age": 22,
             "Height": 172,
             "Weight": 60
         },
         "medList": [
             {
-                "Id": 2012,
-                "Name": "Wit D",
+                "Id": 1,
+                "Name": "Witamina D",
                 "medInfo" : {
-                    "MedType" : "pill"
+                    "MedType" : "Pill"
                 }
             },
             {
-                "Id": 2000,
+                "Id": 2,
                 "Name": "Paracetamol",
                 "medInfo" : {
-                    "MedType" : "pill"
+                    "MedType" : "Pill"
+                }
+            },
+            {
+                "Id": 3,
+                "Name": "Omega 3",
+                "medInfo" : {
+                    "MedType" : "Pill"
+                }
+            },
+            {
+                "Id": 4,
+                "Name": "Rutinoscorbin",
+                "medInfo" : {
+                    "MedType" : "Pill"
                 }
             }
         ]
