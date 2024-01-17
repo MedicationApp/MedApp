@@ -17,7 +17,7 @@ else if (UserState.getPatient().medList.Count == 0)
 
     <div class="row mb-4">
         <div class="col-sm-6">
-            <button type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
+            <button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
         </div>
     </div>
 }
@@ -25,7 +25,7 @@ else
 {
     <div class="row mb-4">
         <div class="col-sm-6">
-            <button type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
+            <button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => AddMed())">New med</button>
         </div>
     </div>
 
@@ -44,7 +44,7 @@ else
                     <td>@med.Id</td>
                     <td>@med.Name</td>
                     <td>@med.medInfo.medType</td>
-                    <td><button type="button" class="btn btn-primary" @onclick="(() => EditMed(med.Id))">Edit</button></td>
+                    <td><button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => EditMed(med.Id))">Edit</button></td>
                 </tr>
             }
         </tbody>
