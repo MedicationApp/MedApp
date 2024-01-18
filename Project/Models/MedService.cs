@@ -47,6 +47,7 @@ namespace Project.Models
         public void DeleteMed(Patient patient, Medication med)
         {
             patient.medList.Remove(med);
+            patient.leftForToday.Remove(med);
         }
     }
 }
