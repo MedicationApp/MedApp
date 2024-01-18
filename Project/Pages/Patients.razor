@@ -3,6 +3,8 @@
 @using Newtonsoft.Json;
 @inject HttpClient Http
 @inject Models.UserState UserState;
+@inject Models.MedService MedService;
+@inject NavigationManager NavigationManager;
 
 <PageTitle>Patients</PageTitle>
 
@@ -31,7 +33,8 @@ else
                     <td>@patient.patientInfo.Id</td>
                     <td>@patient.patientInfo.Name</td>
                     <td>@patient.patientInfo.Surname</td>
-                    <td><button type="button" class="btn btn-primary" @onclick="(() => UserState.setUser(patient))">Choose</button></td>
+                    <td><button style="background-color: #8e44ad; border: none"type="button" class="btn btn-primary"
+                            @onclick="(() => setUser(patient))">Choose</button></td>
                 </tr>
             }
         </tbody>
@@ -41,13 +44,29 @@ else
 @code {
     private List<Patient>? patients;
 
+    private void setUser(Patient patient)
+    {
+        UserState.setUser(patient);
+        NavigationManager.NavigateTo("/home");
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
-        var json = await Http.GetStringAsync("sample-data/patients.json");
-        //Console.WriteLine(json);
-        patients = JsonConvert.DeserializeObject<List<Patient>>(json);
-    }
+        var json = await Http.GetStringAsync("sample-data/try.json?nocache={DateTime.Now.Ticks}}}");
+        patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
 
+        foreach (var patient in patients)
+        {
+            patient.leftForToday = new List<Medication>(patient.medList);
+            
+            foreach (var med in patient.medList)
+            {
+                med.AddObserver(patient);
+            }
+        }
+
+        MedService.patientList = patients;
+    }
 
 }

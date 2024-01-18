@@ -12,4 +12,8 @@ var userState = new UserState();
 userState.Initialize();
 builder.Services.AddSingleton(userState);
 
+var medService = new MedService();
+medService.Initialize();
+builder.Services.AddSingleton(medService);
+
 await builder.Build().RunAsync();

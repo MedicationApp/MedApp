@@ -2,18 +2,24 @@ using System;
 
 namespace Project.Models
 {
-    public class Patient
+    public class Patient : ICheckboxObserver
     {
-        public PatientInfo patientInfo;
+        public PatientInfo patientInfo { get; set; }
+        public List<Medication> medList { get; set; }
 
-        public List<int> medList;
-        
-        // public Patient(){
-            
-        //     Console.WriteLine(medList[0]);
-        // }
+        public List<Medication> leftForToday { get; set; }
 
-        
 
+        public void OnCheckboxChanged(Medication medication)
+        {
+            if (medication.Selected)
+            {
+                leftForToday.Remove(medication);
+            }
+            else
+            {
+                leftForToday.Add(medication);
+            }
+        }
     }
 }

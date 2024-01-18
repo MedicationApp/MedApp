@@ -1,0 +1,120 @@
+﻿@page "/med"
+@page "/med/{Id:int}"
+@using Project.Models;
+@using Newtonsoft.Json;
+@inject Models.UserState UserState;
+@inject Models.MedService MedService;
+@inject NavigationManager NavigationManager;
+
+<PageTitle> New Med</PageTitle>
+
+<h3>EditMed</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <EditForm Model="@med" OnSubmit="HandleSubmit">
+            <div class="mb-3">
+                <label for="Name" class="form-label"> Name </label>
+                <InputText id="name" @bind-Value="med.Name" class="form-control"></InputText>
+            </div>
+            <div class="mb-3">
+                <label for="medInfo.MedType" class="form-label"> Type of med </label>
+                <InputSelect id="medType" @bind-Value="med.medInfo.medType" class="form-select">
+                    <option value="">Select Type</option>
+                    @foreach (var medType in Enum.GetValues(typeof(MedType)).Cast<MedType>()) 
+                    { 
+                        <option value="@medType.ToString()">@medType.ToString()</option> 
+                    }
+                </InputSelect>
+            </div>
+            <div class="mb-3">
+                <label for="medInfo.DosageType" class="form-label"> Dosage </label>
+                <InputSelect id="dosage" @bind-Value="med.medInfo.dosageType" class="form-control">
+                    <option value="">Select Dosage</option>
+                    @foreach (var dosageType in Enum.GetValues(typeof(DosageType)).Cast<DosageType>()) 
+                    { 
+                        <option value="@dosageType.ToString()">@dosageType.ToString()</option> 
+                    }
+                </InputSelect>
+                
+            </div <div class="mb-3">
+            <label for="medInfo.TimeOfDay" class="form-label"> Dosage Time </label>
+            <InputSelect id="dosageTime" @bind-Value="med.medInfo.timeOfDay" class="form-control">
+                <option value="">Select Time</option>
+                @foreach (var dosageTime in Enum.GetValues(typeof(TimeOfDay)).Cast<TimeOfDay>()) 
+                { 
+                    <option value="@dosageTime.ToString()">@dosageTime.ToString()</option> 
+                }
+            </InputSelect>
+    </div>
+    <button style="background-color: #8e44ad; border: none" type="submit" class="btn btn-primary">Submit</button>
+    <button style="background-color: #8e44ad; border: none" type="button" class="btn btn-secondary" @onclick="(() => Cancel())">Cancel</button>
+    </EditForm>
+</div>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Medication? med;
+
+    protected override void OnParametersSet()
+    {
+        if (Id is not null)
+        {
+            @* Medication foundMed = UserState.getPatient().GetMedication(Id.Value); *@
+            Medication foundMed = MedService.GetMed(UserState.getPatient(), Id.Value);
+            med = new()
+            {
+                Id = foundMed.Id,
+                Name = foundMed.Name,
+                medInfo = new()
+                {
+                    medType = foundMed.medInfo.medType,
+                    dosageType = foundMed.medInfo.dosageType,
+                    timeOfDay = foundMed.medInfo.timeOfDay
+                }
+            };
+        }
+        else
+        {
+            med = new()
+                {
+                    Id = 0000,
+                    Name = string.Empty,
+                    medInfo = new()
+                    {
+                        medType = MedType.Other,
+                        dosageType = DosageType.Other,
+                        timeOfDay = TimeOfDay.Other
+                    }
+                };
+        }
+    }
+
+
+    private void HandleSubmit()
+    {
+        if(med.Id == 0)
+        {
+            med.Id = UserState.getPatient().medList.Max(m => m.Id) + 1;
+
+            MedService.AddMed(UserState.getPatient(), med);
+
+            @* UserState.getPatient().AddMedication(med); *@
+        }
+        else
+        {
+            @* UserState.getPatient().EditMedication(med); *@
+
+            MedService.EditMed(UserState.getPatient(), med);
+        }
+        NavigationManager.NavigateTo("/meds");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/meds");
+    }
+}

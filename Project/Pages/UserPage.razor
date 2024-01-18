@@ -1,0 +1,49 @@
+@page "/user"
+
+@using Project.Models;
+@inject Models.UserState UserState;
+
+
+@if (UserState.isSet())
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 style="margin-bottom: 20px">Patient Details</h2>
+                <dl class="row">
+                    <dt class="col-sm-4">Name:</dt>
+                    <dd class="col-sm-8">@UserState.getPatient().patientInfo.Name</dd>
+
+                    <dt class="col-sm-4">Surname:</dt>
+                    <dd class="col-sm-8">@UserState.getPatient().patientInfo.Surname</dd>
+
+                    <dt class="col-sm-4">Age:</dt>
+                    <dd class="col-sm-8">@UserState.getPatient().patientInfo.Age</dd>
+
+                    <dt class="col-sm-4">Height:</dt>
+                    <dd class="col-sm-8">@UserState.getPatient().patientInfo.Height</dd>
+
+                    <dt class="col-sm-4">Weight:</dt>
+                    <dd class="col-sm-8">@UserState.getPatient().patientInfo.Weight</dd>
+
+                    <dt class="col-sm-4">Meds Left for Today:</dt>
+                    <dd class="col-sm-8">
+                        @foreach (var med in UserState.getPatient().leftForToday)
+                        {
+                            <div>@med.Name</div>
+                        }
+                    </dd>
+
+
+                </dl>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h1>Welcome! Choose profile :)</h1>
+}
+
+

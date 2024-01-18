@@ -1,0 +1,82 @@
+[
+    {
+        "patientInfo": {
+            "Id": 19034,
+            "Name": "Agnieszka",
+            "Surname": "Kruk",
+            "Age": 22,
+            "Height": 172,
+            "Weight": 60
+        },
+        "medList": [
+            {
+                "Id": 1,
+                "Name": "Witamina C",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 2,
+                "Name": "Żelazo",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 3,
+                "Name": "Witamina D",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 4,
+                "Name": "Amol",
+                "medInfo": {
+                    "MedType": "Liquid"
+                }
+            }
+        ]
+    },
+    {
+        "patientInfo": {
+            "Id": 19036,
+            "Name": "Nina",
+            "Surname": "Pawlak",
+            "Age": 31,
+            "Height": 164,
+            "Weight": 62
+        },
+        "medList": [
+            {
+                "Id": 1,
+                "Name": "Witamina D",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 2,
+                "Name": "Paracetamol",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 3,
+                "Name": "Omega 3",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            },
+            {
+                "Id": 4,
+                "Name": "Rutinoscorbin",
+                "medInfo": {
+                    "MedType": "Pill"
+                }
+            }
+        ]
+    }
+]

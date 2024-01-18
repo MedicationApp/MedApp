@@ -13,7 +13,6 @@ namespace Project.Models
 
         public void setUser(Patient patient){
             currentPatient = patient;
-            //Console.WriteLine(currentPatient.patientInfo.Name);
         }
 
         public Boolean isSet(){
