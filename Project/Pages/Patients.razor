@@ -53,7 +53,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var json = await Http.GetStringAsync("sample-data/try.json?nocahe={DateTime.Now.Ticks}}}");
+        var json = await Http.GetStringAsync("sample-data/try.json?nocache={DateTime.Now.Ticks}}}");
         patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
         MedService.patientList = patients;
     }
