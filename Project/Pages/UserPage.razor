@@ -27,6 +27,14 @@
                     <dt class="col-sm-4">Weight:</dt>
                     <dd class="col-sm-8">@UserState.getPatient().patientInfo.Weight</dd>
 
+                    <dt class="col-sm-4">Meds Left for Today:</dt>
+                    <dd class="col-sm-8">
+                        @foreach (var med in UserState.getPatient().leftForToday)
+                        {
+                            <div>@med.Name</div>
+                        }
+                    </dd>
+
 
                 </dl>
             </div>

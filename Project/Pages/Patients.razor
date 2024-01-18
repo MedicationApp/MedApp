@@ -55,6 +55,17 @@ else
     {
         var json = await Http.GetStringAsync("sample-data/try.json?nocache={DateTime.Now.Ticks}}}");
         patients = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Patient>>(json);
+
+        foreach (var patient in patients)
+        {
+            patient.leftForToday = new List<Medication>(patient.medList);
+            
+            foreach (var med in patient.medList)
+            {
+                med.AddObserver(patient);
+            }
+        }
+
         MedService.patientList = patients;
     }
 
