@@ -63,7 +63,8 @@
     {
         if (Id is not null)
         {
-            Medication foundMed = UserState.getPatient().GetMedication(Id.Value);
+            @* Medication foundMed = UserState.getPatient().GetMedication(Id.Value); *@
+            Medication foundMed = MedService.GetMed(UserState.getPatient(), Id.Value);
             med = new()
             {
                 Id = foundMed.Id,
@@ -99,11 +100,15 @@
         {
             med.Id = UserState.getPatient().medList.Max(m => m.Id) + 1;
 
-            UserState.getPatient().AddMedication(med);
+            MedService.AddMed(UserState.getPatient(), med);
+
+            @* UserState.getPatient().AddMedication(med); *@
         }
         else
         {
-            UserState.getPatient().EditMedication(med);
+            @* UserState.getPatient().EditMedication(med); *@
+
+            MedService.EditMed(UserState.getPatient(), med);
         }
         NavigationManager.NavigateTo("/meds");
     }
