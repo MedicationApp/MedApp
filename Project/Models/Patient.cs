@@ -4,6 +4,7 @@ namespace Project.Models
 {
     public class Patient : ICheckboxObserver
     {
+        public int Id;
         public PatientInfo patientInfo { get; set; }
         public List<Medication> medList { get; set; }
 
