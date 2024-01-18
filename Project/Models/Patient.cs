@@ -20,5 +20,9 @@ namespace Project.Models
         public void AddMedication(Medication med){
             medList.Add(med);
         }
+
+        public void DeleteMedication(Medication med){
+            medList.Remove(med);
+        }
     }
 }

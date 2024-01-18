@@ -44,7 +44,10 @@ else
                     <td>@med.Id</td>
                     <td>@med.Name</td>
                     <td>@med.medInfo.medType</td>
-                    <td><button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => EditMed(med.Id))">Edit</button></td>
+                    <td>
+                        <button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => EditMed(med.Id))">Edit</button>
+                        <button style="background-color: #8e44ad; border: none" type="button" class="btn btn-primary" @onclick="(() => UserState.getPatient().DeleteMedication(med))">Delete</button>
+                    </td>
                 </tr>
             }
         </tbody>
